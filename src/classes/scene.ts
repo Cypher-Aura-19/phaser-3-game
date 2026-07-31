@@ -1,3 +1,4 @@
+/** Main Phaser scene — orchestrates all game systems from preload through update. */
 import Phaser from 'phaser';
 import TUTORIAL from './tutorial';
 import UI from './ui';

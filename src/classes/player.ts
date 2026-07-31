@@ -1,3 +1,4 @@
+/** Player sprite — handles keyboard, WASD and touch input, animations, and physics. */
 import Phaser from 'phaser';
 import SCENE from './scene';
 import { GAME_CONFIG } from '../config';
