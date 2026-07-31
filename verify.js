@@ -1,3 +1,4 @@
+// Static verification: checks build size and absence of external network references.
 import fs from 'fs';
 import path from 'path';
 
