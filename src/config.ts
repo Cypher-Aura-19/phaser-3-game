@@ -1,3 +1,4 @@
+/** Core game constants — edit here to tune gameplay without touching scene logic. */
 export const GAME_CONFIG = {
     parent: "game",
     width: 1024,

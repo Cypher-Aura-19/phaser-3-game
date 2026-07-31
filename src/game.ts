@@ -1,3 +1,4 @@
+/** Phaser game bootstrap — detects WebGL support and initialises the game. */
 import Phaser from 'phaser';
 import SCENE from './classes/scene';
 
