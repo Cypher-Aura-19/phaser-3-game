@@ -1,0 +1,153 @@
+<!doctype html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" />
+    <title>ECHO-7: FRAGMENT COLLECTOR</title>
+    <meta name="description" content="ASCII art platformer made with Phaser.io" />
+    <meta name='author' content='Echo-7' />
+    <meta name='version' content='0.7' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' /> 
+    <link rel='icon shortcut' href='data:image/x-icon;,' />
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%; 
+            overflow: hidden;
+            background: #010101;
+        }
+        #landingPage {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: black;
+            font-family: monospace;
+            background: #121212;
+            color: #ECECEC;
+            z-index: 1000;
+        }
+        #landingPage * {
+            max-width: 90vw;
+            text-align: center;
+        }
+        h2 {
+            margin: 0.5rem;
+            font-size: 18pt;
+            height: 1.5rem;
+        }
+        button {
+            padding: 1rem 2rem;
+            font-size: large;
+            font-weight: bolder;
+            font-family: monospace;
+            margin: 2rem;
+            margin-bottom: 2.5rem;
+            color: #121212;
+            background: #ECECEC;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        button:active {
+            background: #A0A0A0;
+        }
+        .fadeIn {
+            transition: opacity 1s;
+            transition-timing-function: ease-out; 
+            opacity: 1 !important;
+        }
+        .delayed {
+            transition-delay: 500ms;
+        }
+        #game {
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        #loadingIndicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #121212;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            font-family: monospace;
+            color: #ECECEC;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(0, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: #00ffff;
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .progress-text {
+            font-size: 16pt;
+            margin-bottom: 10px;
+            text-shadow: 0 0 5px #00ffff;
+        }
+        .progress-bar-container {
+            width: 200px;
+            height: 6px;
+            background-color: #222222;
+            border-radius: 3px;
+            overflow: hidden;
+            border: 1px solid #ff00ff;
+            box-shadow: 0 0 8px #ff00ff;
+        }
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: #00ffff;
+            box-shadow: 0 0 8px #00ffff;
+            transition: width 0.1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="loadingIndicator">
+        <div class="spinner"></div>
+        <div class="progress-text" id="loadingProgressText">Loading...</div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="loadingProgressBar"></div>
+        </div>
+    </div>
+
+    <div id="landingPage">
+        <h2>Welcome to</h2>
+        <h1><img id="titleLogo" alt="ECHO-7" height="92px"></h1>
+        <h2 id="subtitle"></h2>
+        <button id="playBtn" style="opacity: 0"> PLAY </button>
+        <div id="ctaContainer" style="opacity: 0; margin-top: 1rem; margin-bottom: 1.5rem;">
+            <button id="landingCtaBtn" style="background: #ff00ff; color: white; border: 1px solid #00ffff; box-shadow: 0 0 10px #ff00ff; margin: 0; padding: 0.8rem 1.6rem; font-size: medium;">PLAY NOW</button>
+        </div>
+        <div id="fineprint" style="opacity: 0">
+            <p>A platformer made with Phaser.io</p>
+        </div>
+    </div>
+    
+    <div id="game"></div>
+
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

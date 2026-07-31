@@ -1,0 +1,23 @@
+{
+  "name": "echo-7-playable",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && node copy-build.js",
+    "build:single": "vite build && node copy-build.js",
+    "build:applovin": "vite build && node copy-build.js",
+    "typecheck": "tsc --noEmit",
+    "test:acceptance": "node verify_acceptance.js"
+  },
+  "dependencies": {
+    "phaser": "3.90.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0",
+    "vite-plugin-singlefile": "^2.0.1"
+  }
+}

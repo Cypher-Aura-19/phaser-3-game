@@ -1,0 +1,12 @@
+.vscode/settings.json
+node_modules/
+
+# Build output (generated single-file AppLovin bundle)
+release/*
+
+# Local test artifacts
+.playwright-mcp/
+*.local.png
+
+# NOTE: docs/ is intentionally tracked. The original upstream .gitignore
+# excluded docs/*; the audit documentation lives there and must be committed.
