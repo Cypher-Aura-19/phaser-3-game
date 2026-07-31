@@ -1,3 +1,7 @@
+/**
+ * MraidAdapter — wraps window.mraid for AppLovin SDK compatibility.
+ * Falls back gracefully in a standard browser with no MRAID present.
+ */
 import { GAME_CONFIG } from '../config';
 
 let initialized = false;
