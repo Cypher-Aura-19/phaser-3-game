@@ -39,7 +39,7 @@ Collect **all currency fragments (`$`)** on each level before losing all three *
 
 ```bash
 # Clone and install
-git clone <repo-url>
+git clone https://github.com/Cypher-Aura-19/phaser-3-game.git
 cd echo-7-playable
 npm install
 
