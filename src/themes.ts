@@ -1,3 +1,4 @@
+/** Five selectable color themes — all game objects derive tints from the active theme. */
 export interface Theme {
     background: number;
     hudPrimary: number;

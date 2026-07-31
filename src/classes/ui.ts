@@ -1,3 +1,4 @@
+/** HUD, help/options overlay, fullscreen toggle, theme switcher, and CTA button. */
 import Phaser from 'phaser';
 import SCENE from './scene';
 import { themes } from '../themes';
