@@ -20,7 +20,13 @@ const PORT = 9999;
 
 const server = new http.createServer(function (req, res) {
     var query = url.parse(req.url, true);  
-    var filename = path.join(__dirname, query.pathname);
+    var pathname = query.pathname;
+    if (pathname === '/' || pathname === '/index.html') {
+        pathname = '/dist/index.html';
+    } else if (pathname === '/applovin.html') {
+        pathname = '/dist/applovin.html';
+    }
+    var filename = path.join(__dirname, pathname);
 
     if(req.method === 'POST') {
         req.setEncoding('utf8');
